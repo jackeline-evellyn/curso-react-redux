@@ -8,17 +8,22 @@ import ReactDOM from 'react-dom'
 // import MultiElementos from './components/MultiElementos'
 import FamiliaSilva from './components/FamilaSilva'
 
-import Famila from './components/Familia'
-import Membro from './components/Membro'
+// import Famila from './components/Familia'
+// import Membro from './components/Membro'
+import ComponenteComFuncao from './components/ComponenteComFuncao'
 
 const elemento = document.getElementById('root');
 
 ReactDOM.render(
     <div>
-        <Famila sobrenome="Silva" numero={123}>
+        <ComponenteComFuncao /> 
+        <ComponenteComFuncao />
+
+
+        {/* <Famila sobrenome="Silva" numero={123}>
             <Membro nome="Andre"  />
            <Membro nome="Mariana"  />
-        </Famila>
+        </Famila> */}
 
         {/* <FamiliaSilva sobrenome="Silva"/> */}
 
