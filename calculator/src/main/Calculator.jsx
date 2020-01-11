@@ -7,7 +7,7 @@ import Display from '../components/Display'
 // O estado inicial do objeto
 const initialState = {
     //Valor que será exibido no display da Calculadora 
-    displayValue: '1000',
+    displayValue: '0',
     
     //Se é necessário limpar o display
     clearDisplay: false,
@@ -47,8 +47,43 @@ export default class Calculator extends Component {
 
   //Adiciona um digito, seja numero ou ','
   addDigit(n){
-      console.log(n)
-  }
+      //A calculador aceita apenas um ponto 
+      
+      //Caso o numero digitado seja um ponto
+      //E No estado do displayValue já conter '.' então sairá da função
+      if( n === '.' && this.state.displayValue.includes('.')){
+          return
+      }
+
+      //O display é limpado em duas situações
+      // 1.Quando há apenas o valor 0 e 
+      //2. Quando o clearDisplay é verdadeiro
+      const clearDisplay = this.state.displayValue === '0' 
+            || this.state.clearDisplay
+
+    //    Se o display for ser limpo currentValue recebe um valor vazio
+    //    Caso não,  recebe o valor do displayValue
+      const currentValue = clearDisplay ? '' : this.state.displayValue
+
+      //displayValue recebe o valorAtual mais o n (novo valor que foi recebido)
+      const displayValue = currentValue + n
+      this.setState({displayValue, clearDisplay: false})
+
+      //Caso seja um digito diferente de ponto
+      if( n !== '.'){
+          //armazena-se no i qual o indice do array que está sendo manipulado [0 ou 1]
+          const i = this.state.current
+          //Converte-se para float o valor recebido 
+          const newValue= parseFloat(displayValue)
+          //Clonou-se para um novo array e armazenou na variavel values
+          const values = [...this.state.values]
+          //o value no indice que foi passado recebe a variavel em float
+          values[i] = newValue
+          //substitui o novo array no estado
+          this.setState({values})
+          console.log(values)
+      }
+    }
    
    
    
