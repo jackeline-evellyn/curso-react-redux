@@ -2,7 +2,7 @@ import React from 'react'
 import './Button.css'
 
 export default props => {
-    let classes ='button'
+    let classes ='button '
     // Caso possua a propriedade determinada será adicionado na classe 'button'
     //E com isso realizando a estilização desejada
     classes += props.operation ? 'operation' : ''
@@ -11,7 +11,7 @@ export default props => {
 
     return (
         <button 
-            onClick= {e => props.click && (e.target.label)}
+            onClick= {e => props.click && props.click(props.label)}
             className={classes}>
                 {props.label}
             </button>
