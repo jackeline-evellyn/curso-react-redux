@@ -42,7 +42,41 @@ export default class Calculator extends Component {
 
   //Definir qua operação se deseja fazer
   setOperation(operation){
-      console.log(operation)
+    // 1. Para realiza a operaçao é necessário acessar o segundo valor do array 
+    // state.current 0 => 1
+    // 2. marcar a flag para o display ser limpo (clearDisplay)
+    // 3.  a operação deve receber o seu valor
+
+    if(this.state.current === 0){
+        this.setState({operation, current: 1, clearDisplay: true})
+    } else {
+    //Quando já existe uma operação settada
+    
+      //caso aperte o '=' o equals será true
+      const equals = operation === '='
+
+      //Caso não finalize com '=' e realize uma nova operação
+      const currentOperation = this.state.operation
+
+      //Clone de values
+          const values = [...this.state.values]
+          try {
+              //Uso da função eval
+            values[0] = eval(`${values[0]} ${currentOperation} ${values[1]}`)
+         } catch(e){
+             values[0] = this.state.values[0]
+         }
+
+          values[1] = 0
+
+          this.setState({
+              displayValue: values[0],
+              operation: equals ? null : operation,
+              current: equals ? 0 : 1,
+              clearDisplay: !equals,
+              values
+          })
+      }
   }
 
   //Adiciona um digito, seja numero ou ','
