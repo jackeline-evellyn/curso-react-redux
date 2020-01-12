@@ -66,14 +66,24 @@ export default class Calculator extends Component {
          } catch(e){
              values[0] = this.state.values[0]
          }
+         //Foi necessário o uso de try, para evitar erros
 
+         //o valor no array value na posição 1 é zerada
           values[1] = 0
 
           this.setState({
+              //O resultado da operação será armazenado no display
+              //para que seja exibido
               displayValue: values[0],
+              //Se o equals for verdadeiro ( é verdadeiro quando o = é setado)
+              //Operação recebe null, caso contrario será setado com o operation atual
               operation: equals ? null : operation,
+              //Caso o equal (=) seja verdadeiro continuará mechendo no valor 0
+              //Se colocou outra operação ele mecherá no segundo
               current: equals ? 0 : 1,
+              //Se for qualquer valor a não ser equals => limpará o display
               clearDisplay: !equals,
+              //Colocado os valores para que seja substituido no estado
               values
           })
       }
