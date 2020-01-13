@@ -6,7 +6,7 @@ module.exports = {
     entry: './src/index.jsx',
     //saída
     output: {
-        path: ___dirname + '/public',
+        path: __dirname + '/public',
         filename: './app.js'
     },
     //configuração do devServer
@@ -18,7 +18,7 @@ module.exports = {
     resolve: {
         extensions: ['','.js','.jsx'],
         alias: {
-            module: ___dirname + '/node_modules'
+            module: __dirname + '/node_modules'
         }
     },
     //configuração do Css
