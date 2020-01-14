@@ -46,7 +46,6 @@ export default class Calculator extends Component {
     // state.current 0 => 1
     // 2. marcar a flag para o display ser limpo (clearDisplay)
     // 3.  a operação deve receber o seu valor
-
     if(this.state.current === 0){
         this.setState({operation, current: 1, clearDisplay: true})
     } else {
@@ -156,7 +155,6 @@ export default class Calculator extends Component {
                 <Button label="0"  click={this.addDigit} double/>
                 <Button label="."  click={this.addDigit} />
                 <Button label="="  click={this.setOperation} operation/>
-               
             </div>
         )
     }

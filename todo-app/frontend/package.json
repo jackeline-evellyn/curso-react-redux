@@ -1,7 +1,6 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --colors --inline --hot",
@@ -31,5 +30,6 @@
     "axios": "^0.15.3",
     "react-dom": "^15.4.2",
     "react-router": "^3.0.2"
-  }
+  },
+  "description": ""
 }
