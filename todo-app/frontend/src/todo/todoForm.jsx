@@ -7,7 +7,8 @@ export default props => (
         {/* As tags do bootstrap */}
         <Grid cols='12 9 10'>
             <input id='description' className='form-control'
-            placeholder='Adicione uma tarefa'></input>
+            placeholder='Adicione uma tarefa'
+            value={props.description}></input>
         </Grid> 
 
         <Grid cols='12 3 2'>
