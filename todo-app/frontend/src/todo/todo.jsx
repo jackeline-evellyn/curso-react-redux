@@ -5,15 +5,18 @@ import TodoList from './todoList'
 
 export default class Todo extends Component {
     constructor(props){
-        super(props)
+        super(props) 
         this.state = {description: '', list: []}
+        this.handleChange = this.handleChange.bind(this)
         this.handleAdd = this.handleAdd.bind(this)
     }
- 
-  handleAdd() {
+    handleChange(e){
+        this.setState({...this.state, description: e.target.value})
+    }
+    handleAdd() {
      //console.log('Add')
      
-     console.log(this)
+     console.log(this.state.description)
    }
    
     render(){
@@ -21,7 +24,9 @@ export default class Todo extends Component {
             <div>
                 <PageHeader name='Tarefas' small='cadastro'></PageHeader>
                 {/* Campos para adicionar */}
-                <TodoForm description={this.state.description} handleAdd={this.handleAdd} />
+                <TodoForm description={this.state.description}
+                handleAdd={this.handleAdd} 
+                handleChange={this.handleChange}/>
                 {/* Campo de Listagem */}
                 <TodoList />
             </div>
