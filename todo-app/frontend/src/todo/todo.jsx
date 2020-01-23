@@ -22,10 +22,11 @@ export default class Todo extends Component {
 
         this.refresh()
     }
-    refresh(){
-        //sort vai ordenar
+    //Pegar a lista mais atualizada
+    refresh(description = ''){
+        //sort vai ordenar de forma decrescente
         axios.get(`${URL}?sort=-createAt`)
-        .then((resp) => this.setState({...this.state, description: '', list: resp.data}))
+        .then(resp => this.setState({...this.state, description: '', list: resp.data}))
     }
 
     handleChange(e){
