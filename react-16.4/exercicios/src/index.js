@@ -5,12 +5,11 @@ import BomDia from './componentes/BomDia'
 
 // import BoaTarde, { BoaNoite} from './componentes/Multiplos'
 //const elemento = <h1>React 2 </h1>
-
-import Multi from './componentes/Multiplos'
+//import Multi from './componentes/Multiplos'
+import Saudacao from './componentes/Saudacao'
 
 ReactDOM.render(
 <div>
-    <Multi.BoaTarde nome="Ana"/>
-    <Multi.BoaNoite nome="Bia" />
+    <Saudacao tipo="Bom dia" nome="Joao"/>
 </div>
 , document.getElementById('root'))
