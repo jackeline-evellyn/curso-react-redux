@@ -1,5 +1,5 @@
 import React from 'react'
-import {Switch, Route, Redirect } from 'react-router'
+import {Switch, Route, Redirect } from 'react-router-dom'
 
 import Home from '../components/home/Home'
 import UserCrud from '../components/user/UserCrud'
@@ -10,5 +10,6 @@ export default props =>
     <Route path="/users" component={UserCrud} />
     {/* Caso o usuário acesse outra url, será direcionado para o '/'
     ou seja, {Home} */}
-    <Redirect from="*" to="/" />
+    <Redirect from='
+    *' to='/' />
 </Switch>
