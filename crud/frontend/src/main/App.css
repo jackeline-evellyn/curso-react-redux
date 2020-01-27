@@ -38,13 +38,19 @@
     background-color: #F5F5F5;
 }
 
-aside.logo {
+aside .logo {
     grid-area: logo;
 }
 
 header.header {
     grid-area: header;
 }
+
+
+header.header {
+    grid-area: header;
+}
+
 
 aside.menu-area{
     grid-area: menu;
